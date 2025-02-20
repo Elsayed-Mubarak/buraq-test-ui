@@ -1,0 +1,45 @@
+name: Azure Static Web Apps CI/CD
+
+pr:
+  branches:
+    include:
+      - main
+trigger:
+  branches:
+    include:
+      - main
+
+jobs:
+- job: build_and_deploy_job
+  displayName: Build and Deploy Job
+  condition: or(eq(variables['Build.Reason'], 'Manual'),or(eq(variables['Build.Reason'], 'PullRequest'),eq(variables['Build.Reason'], 'IndividualCI')))
+  pool:
+    vmImage: ubuntu-latest
+  variables:
+  - group: Azure-Static-Web-Apps-wonderful-stone-0c42a5e00-variable-group
+  steps:
+  - checkout: self
+    submodules: true
+
+  # Debugging: List files in the working directory
+  - script: |
+      ls -la
+    displayName: 'List Files in Working Directory'
+
+  # Install dependencies
+  - script: |
+      npm install
+    displayName: 'npm install'
+
+  # Build the project
+  - script: |
+      npm run build
+    displayName: 'npm run build'
+
+  # Deploy to Azure Static Web App
+  - task: AzureStaticWebApp@0
+    inputs:
+      azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_STONE_0C42A5E00)
+      app_location: "/" # Update this if your package.json is in a subdirectory
+      api_location: "" # Api source code path - optional
+      output_location: ".next" # Built app content directory - optional

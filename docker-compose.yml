@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  ui:
+    image: buraq-ai-ui:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - buraq-ai
+  buraq-ai:
+    image: buraq-ai:latest
+    ports:
+     - "9090:81"

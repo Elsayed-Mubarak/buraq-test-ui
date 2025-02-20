@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.react-flow {
+  --xy-connectionline-stroke-default: #C50909FF;
+  --xy-connectionline-stroke-width-default: 10;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: white;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+/* START SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-scrollbar rounded-[4px] cursor-pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-scrollbar-hover;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-scrollbar-track rounded-[4px];
+}
+/* END SCROLLBAR */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.react-phone-input-input {
+  @apply w-full h-10 px-4 text-gray-700 placeholder-gray-400 rounded-lg focus:outline-none;
+}
+
+/* start suitch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #13be66;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #13be66;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* end switch button */
+
+/* start quill */
+
+
+.quill>.ql-container {
+  border-bottom-right-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+
+}
+
+.quill>.ql-toolbar {
+  border-top-right-radius: 0.5rem !important;
+  border-top-left-radius: 0.5rem !important;
+  @apply !bg-gray-100;
+}
+
+/* end quill */
+
+.node-settings-desc {
+  @apply text-sm text-gray-500;
+}
+
+.variable-name {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.rest-input {
+  @apply p-2 hover:border-indigo-500 focus:ring-0 focus:ring-transparent ring-0 ring-transparent outline-none rounded-md invalid:border-red-500;
+}
+
+@keyframes waveAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 255, 0.5);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 50px 50px rgba(0, 0, 255, 0);
+    opacity: 0;
+  }
+}
+
+.layered-wave {
+  position: relative;
+  border: 2px solid rgba(0, 0, 255, 0.5);
+  border-radius: 8px;
+}
+
+.layered-wave::before,
+.layered-wave::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 255, 0.5);
+  animation: waveAnimation 2s infinite ease-out;
+  opacity: 0;
+}
+
+.layered-wave::before {
+  animation-delay: 0s; /* Start immediately */
+}
+
+.layered-wave::after {
+  animation-delay: 1s; /* Start at 50% of the first cycle (1s into 2s duration) */
+}
+
+
+@layer utilities {
+  @keyframes ripple {
+    to {
+      transform: scale(4); /* Expand the ripple */
+      opacity: 0; /* Fade out */
+    }
+  }
+
+  .animate-ripple {
+    animation: ripple 2s ease-out;
+  }
+}
+
+
+/* Highlight Animation */
+@keyframes redHighlight {
+  0% {
+    box-shadow: 0 0 0px 4px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 10px 6px rgba(255, 0, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0px 4px rgba(255, 0, 0, 0.5);
+  }
+}
+
+.highlighted {
+  animation: redHighlight 1s ease-in-out 7;
+  border: 2px solid red; /* Optional: Add a solid red border */
+  border-radius: 8px; /* Optional: Make the border rounded */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+

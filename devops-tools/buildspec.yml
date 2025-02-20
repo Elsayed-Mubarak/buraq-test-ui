@@ -1,0 +1,28 @@
+version: 0.2
+phases:
+ pre_build:
+  commands:
+   - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 533267176529.dkr.ecr.me-south-1.amazonaws.com
+   - RepoName=buraq-ui
+   - REPOSITORY_URI=533267176529.dkr.ecr.me-south-1.amazonaws.com/buraq-ui
+   - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
+   - echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7
+   - COMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+   - IMAGE_TAG=${COMIT_HASH:=latest}
+   - ls
+ build:
+  commands:
+   - echo This build on `date`
+   - echo building the image ....
+   - docker build -t $REPOSITORY_URI:latest -f ./devops-tools/dockerfile .
+   - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+ post_build:
+  commands:
+   - echo completed on `date`
+   - echo "Gonna push docker mages"
+   - docker push $REPOSITORY_URI:latest
+   - docker push $REPOSITORY_URI:$IMAGE_TAG
+   - echo writing image definitions file ...
+   - printf '[{"name":"buraq-ui","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json

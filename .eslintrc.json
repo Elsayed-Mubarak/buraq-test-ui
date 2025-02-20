@@ -1,0 +1,7 @@
+{
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": ["src/app/page.js", "**/*.js"], // Customize with paths to ignore
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  }
+}

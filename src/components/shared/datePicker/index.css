@@ -1,0 +1,55 @@
+/* Button Styles */
+#date {
+    border-color: #d1d5db;
+    border-radius: 8px;
+  }
+  
+  #date:focus {
+    border-color: #3b82f6; /* Blue focus border */
+    outline: none;
+  }
+  
+  /* Calendar Styles */
+  .calendar {
+    padding: 1rem;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .calendar .rdp-cell {
+    border-radius: 50%; /* Round individual days */
+  }
+  
+  .calendar .rdp-day_selected {
+    background-color: #3b82f6; /* Blue for selected */
+    color: white;
+  }
+  
+  .calendar .rdp-day_range_start,
+  .calendar .rdp-day_range_end {
+    background-color: #3b82f6;
+    color: white;
+    border-radius: 50%;
+  }
+  .rdp-weekdays {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+  }
+
+.rdp-root > div:nth-child(1) {
+  @apply sm:flex-col 
+}
+.rdp-root > div:nth-child(1) nav {
+  @apply justify-between
+}
+.rdp-month_caption {
+  @apply text-center
+}
+
+.rdp-month_caption {
+  @apply absolute top-4 left-1/2 -translate-x-1/2
+}
+
+.rdp-week {
+  @apply gap-2
+}

@@ -1,0 +1,32 @@
+export enum NodeTypesSettingsEnum {
+    TRIGGER = 'trigger',
+    INPUT_COLLECT = "collect_input",
+    MESSAGE = "message",
+    EMAIL = "email",
+    OPTIONS = "options1",
+    CONDITION = "Condition",
+    CALENDAR = "calender",
+    DIALOG = "dialog",
+    FLOW = "flow",
+    COLLECT_FILE = "file",
+    JUMP = "jump",
+    ZAPIER = 'zapier',
+    SALES_FORCE = "salesForce",
+    REPLY_BUTTON = 'button',
+    HTTP_REQUEST = 'http_request',
+    DYNAMIC_DATA = 'dynamic_data',
+    JAVA_SCRIPT = 'javascript',
+    TALK_TO_HUMAN = 'human',
+    LIST = 'list',
+    WEBHOOK = 'webhook',
+    ZOHO = "zoho",
+    ANSWER_AI = 'answer_AI',
+    SET_AI = 'set_AI',
+    WHATSAPP_FLOW = "whatsapp_flow",
+    DELAY = "delay",
+    SMS = "send_sms",
+    SEND_WHATSAPP = "send_whatsapp",
+    FLOWSTART = "FlowStart"
+    
+}
+

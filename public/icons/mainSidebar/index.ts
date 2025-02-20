@@ -1,0 +1,11 @@
+export { default as StatisticsIcon } from "./StatisticsIcon";
+export { default as ChatIcon } from "./ChatIcon";
+export { default as AiStudioIcon } from "./AiStudioIcon";
+export { default as AppMarketIcon } from "./AppMarketIcon";
+export { default as BotBuilderIcon } from "./BotBuilderIcon";
+export { default as ChannelIcon } from "./ChannelIcon";
+export { default as ContactsIcon } from "./ContactsIcon";
+export { default as HelpDeskIcon } from "./HelpDeskIcon";
+export { default as SettingsIcon } from "./SettingsIcon";
+export { default as UserIcon } from "./UserIcon";
+export { default as GroupIcon } from "./GroupIcon";

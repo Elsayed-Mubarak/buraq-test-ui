@@ -1,0 +1,45 @@
+.custom-slider {
+    width: 100%;
+    max-width: 300px;
+    height: max-content;
+
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+}
+
+.custom-slider::-webkit-slider-runnable-track {
+    background-color: blue;
+    height: 2px;
+}
+
+.custom-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    
+    margin-top: -5px;
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 100%;
+}
+
+.custom-slider::-moz-range-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    
+    margin-top: -9px;
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 100%;
+}
+
+.custom-slider::-moz-range-track {
+    background-color: blue;
+    height: 2px;
+}
